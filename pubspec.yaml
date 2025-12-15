@@ -30,6 +30,29 @@ dependencies:
   # Splash Screen
   flutter_native_splash: ^2.4.7
 
+  # Konum alma (olmazsa olmaz)
+  #   Neden?
+  # Yüksek doğruluk (GPS)
+  # Permission + servis kontrolü
+  # Canlı konum takibi
+  # Stabil ve battle-tested
+  geolocator: ^14.0.2
+
+  # Harita gösterimi
+
+  #   Neden?
+  # Marker, polyline, camera kontrolü
+  # Performanslı
+  # Navigasyon altyapısına uygun
+  google_maps_flutter: ^2.14.0
+  
+  # Koordinat → adres Latitude / Longitude → adres
+  #   Neden?
+  # Basit
+  # Google Maps API key gerektirmez
+  # Teslimat adresi oluşturmak için yeterli
+  geocoding: ^4.0.0
+
 
 # Packages End
 dev_dependencies:
@@ -51,6 +74,8 @@ flutter:
 # Assets
   assets:
     - assets/images/
+    - assets/images/categories/
+    - assets/images/splash/
     - assets/icons/brands/
     - assets/logos/
 
