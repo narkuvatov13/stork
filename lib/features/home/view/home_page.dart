@@ -11,6 +11,15 @@ class HomePage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Home Page')));
+    return Scaffold(
+      appBar: AppBar(
+        foregroundColor: Colors.white,
+        title: Text('Stork'),
+        actions: [Icon(Icons.shopping_bag_outlined)],
+      ),
+      body: Center(
+        child: Container(width: 200, height: 200, decoration: BoxDecoration(color: Colors.white)),
+      ),
+    );
   }
 }

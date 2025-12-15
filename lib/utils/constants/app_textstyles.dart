@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // flutter pub add google_fonts
 
 class AppTextStyles {
   // *headings
-  static TextStyle h1 = GoogleFonts.lato(
+  static TextStyle h1 = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 32,
     fontWeight: FontWeight.w700,
     height: 1.2,
     letterSpacing: -0.5,
   );
 
-  static TextStyle h2 = GoogleFonts.lato(
+  static TextStyle h2 = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 24,
     fontWeight: FontWeight.w600,
     height: 1.2,
     letterSpacing: -0.5,
   );
 
-  static TextStyle h3 = GoogleFonts.lato(
+  static TextStyle h3 = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 18,
     fontWeight: FontWeight.w500,
     height: 1.2,
@@ -27,43 +29,50 @@ class AppTextStyles {
   );
 
   // *body text
-  static TextStyle bodyLarge = GoogleFonts.lato(
+  static TextStyle bodyLarge = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
 
-  static TextStyle bodyMedium = GoogleFonts.lato(
+  static TextStyle bodyMedium = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 15,
     fontWeight: FontWeight.w400,
     letterSpacing: 0.2,
   );
 
-  static TextStyle bodySmall = GoogleFonts.lato(
+  static TextStyle bodySmall = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
 
   //* Button Text
-  static TextStyle buttonLarge = GoogleFonts.lato(
+  static TextStyle buttonLarge = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 16,
     fontWeight: FontWeight.w600,
     letterSpacing: 0.5,
   );
 
-  static TextStyle buttonMedium = GoogleFonts.lato(
+  static TextStyle buttonMedium = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 15,
     fontWeight: FontWeight.w600,
     letterSpacing: 0.5,
   );
 
-  static TextStyle buttonSmall = GoogleFonts.lato(
+  static TextStyle buttonSmall = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 14,
     fontWeight: FontWeight.w500,
     letterSpacing: 0.5,
   );
 
   // * Label Text
-  static TextStyle labelMeium = GoogleFonts.lato(
+  static TextStyle labelMeium = TextStyle(
+    fontFamily: 'Montserrat',
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
