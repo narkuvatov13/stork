@@ -1,24 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:stork/utils/constants/app_colors.dart';
-import 'package:stork/utils/constants/app_sizes.dart';
 
-class HomePage extends ConsumerStatefulWidget {
-  const HomePage({super.key});
+class StorkShopHomePage extends ConsumerStatefulWidget {
+  const StorkShopHomePage({super.key});
 
   @override
-  ConsumerState<HomePage> createState() => _HomePageState();
+  ConsumerState<StorkShopHomePage> createState() => _StorkShopHomePageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _StorkShopHomePageState extends ConsumerState<StorkShopHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        foregroundColor: Colors.white,
-        title: Text('Stork'),
-        actions: [Icon(Icons.shopping_bag_outlined)],
-      ),
+    return Scaffold(body: Center(child: Text('data')));
+  }
+}
+/*
+
+Getir’de KONUM AKIŞI (gerçek mimari)
+Kullanıcı uygulamayı açar
+        ↓
+Konum izni kontrol edilir
+        ↓
+Anlık konum alınır (geolocator)
+        ↓
+Harita açılır (google_maps_flutter)
+        ↓
+Adres çözülür (geocoding)
+        ↓
+Kullanıcı adresi onaylar
+        ↓
+Backend’e gönderilir
+
+
       body: Column(
         children: [
           Expanded(
@@ -95,6 +108,6 @@ class _HomePageState extends ConsumerState<HomePage> {
           // Container(width: 200, height: 200, decoration: BoxDecoration(color: Colors.white)),
         ],
       ),
-    );
-  }
-}
+
+
+*/
