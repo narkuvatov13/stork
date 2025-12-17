@@ -10,7 +10,7 @@ class Apps extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            context.go('/stork-shop');
+            context.go('/stork-shop-home');
           },
           child: Text('data'),
         ),

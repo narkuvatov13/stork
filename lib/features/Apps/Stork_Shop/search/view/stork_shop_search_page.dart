@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class StorkShopHomePage extends ConsumerStatefulWidget {
-  const StorkShopHomePage({super.key});
+class StorkShopSearchPage extends ConsumerStatefulWidget {
+  const StorkShopSearchPage({super.key});
 
   @override
-  ConsumerState<StorkShopHomePage> createState() => _StorkShopHomePageState();
+  ConsumerState<StorkShopSearchPage> createState() => _StorkShopSearchPageState();
 }
 
-class _StorkShopHomePageState extends ConsumerState<StorkShopHomePage> {
+class _StorkShopSearchPageState extends ConsumerState<StorkShopSearchPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Home Page')));
+    return Scaffold(body: Center(child: Text('Seacrh Pages')));
   }
 }
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stork/utils/constants/app_colors.dart';
 import 'package:stork/utils/theme/custom_themes/appbar_theme.dart';
 import 'package:stork/utils/theme/custom_themes/bottom_sheet_theme.dart';
+import 'package:stork/utils/theme/custom_themes/bottomnavigationbar_theme.dart';
 import 'package:stork/utils/theme/custom_themes/checkbox_theme.dart';
 import 'package:stork/utils/theme/custom_themes/chip_theme.dart';
 import 'package:stork/utils/theme/custom_themes/elevated_button_theme.dart';
@@ -22,6 +23,7 @@ class YAppTheme {
     elevatedButtonTheme: YElevevatedButtonTheme.lightElevatedButtonTheme,
     chipTheme: YChipTheme.lightChipTheme,
     appBarTheme: YAppBarTheme.lightAppBarTheme,
+    bottomNavigationBarTheme: YBottomNavigationBarTheme.bottomNavigationBarTheme,
     checkboxTheme: YCheckBoxTheme.lightCheckBoxTheme,
     bottomSheetTheme: YBottomSheetTheme.lightBottomSheetTheme,
     outlinedButtonTheme: YOutlinedButtonTheme.lightOutlinedButtonTheme,

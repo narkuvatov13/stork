@@ -76,6 +76,12 @@ class AppTextStyles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle bottonNavigationBarLabel = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 12,
+    letterSpacing: 0,
+    fontWeight: FontWeight.w600,
+  );
 
   // * Helper Function for Color Variations
   static TextStyle withColor(TextStyle style, Color color) {
