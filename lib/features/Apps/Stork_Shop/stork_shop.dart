@@ -20,85 +20,11 @@ class _StorkShopState extends ConsumerState<StorkShop> {
     return Scaffold(
       appBar: _appBar(),
       body: widget.navigationShell,
-      bottomNavigationBar: BottomAppBar(
-        color: AppColors.surface,
-        padding: EdgeInsets.zero,
-        height: 60,
-        elevation: 10,
-        shadowColor: Colors.red,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _buildInkWellItem(Icons.home, "Home", 0, navigationShell: widget.navigationShell),
-            _buildInkWellItem(Icons.search, "Search", 1, navigationShell: widget.navigationShell),
-            _buildInkWellItem(
-              Icons.shopping_bag,
-              "Card",
-              2,
-              navigationShell: widget.navigationShell,
-            ), // Orta buton artık normal
-            _buildInkWellItem(
-              Icons.receipt_long,
-              "Orders",
-              3,
-              navigationShell: widget.navigationShell,
-            ),
-            _buildInkWellItem(Icons.person, "Profile", 4, navigationShell: widget.navigationShell),
-          ],
-        ),
-      ),
+      bottomNavigationBar: _bottomAppBar(widget.navigationShell),
     );
   }
 }
 
-Widget _buildInkWellItem(
-  IconData icon,
-  String label,
-  int index, {
-  required StatefulNavigationShell navigationShell,
-}) {
-  bool isSelected = navigationShell.currentIndex == index;
-
-  return Expanded(
-    child: InkResponse(
-      radius: 50,
-      // borderRadius: BorderRadius.circular(50),
-      // customBorder: StadiumBorder(),
-      onTap: () {
-        navigationShell.goBranch(index);
-      },
-      // Dalga efekti rengi
-      highlightColor: AppColors.primary.withAlpha(20),
-      splashColor: AppColors.primary.withAlpha(50),
-      splashFactory: InkRipple.splashFactory,
-      // customBorder: StadiumBorder(),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            color: isSelected ? AppColors.primary : AppColors.textSecondary,
-            size: AppSizes.iconXl,
-          ),
-          // const SizedBox(height: 4),
-          Text(
-            label,
-            style: AppTextStyles.withColor(
-              AppTextStyles.bottonNavigationBarLabel,
-              isSelected ? AppColors.primary : AppColors.textSecondary,
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
-}
-
-// TextStyle(
-//               fontSize: AppSizes.iconXs,
-//               color: isSelected ? AppColors.primary : AppColors.textSecondary,
-//               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-//             ),
 //* Widgets
 
 // App Bar Widget
@@ -111,6 +37,65 @@ AppBar _appBar() {
 }
 
 // BottomNavigationBar Widget
+// new
+Widget _bottomAppBar(StatefulNavigationShell navigationShell) {
+  // BottomNavigationBar Item Names
+  const String bottomNavigationItem0 = "Home";
+  const String bottomNavigationItem1 = "Search";
+  const String bottomNavigationItem2 = "Card";
+  const String bottomNavigationItem3 = "Profile";
+  const String bottomNavigationItem4 = "Deals";
+
+  // BottomNavigationBar Item Icons
+  const IconData bottomNavigationIcon0 = Icons.home;
+  const IconData bottomNavigationIcon1 = Icons.search;
+  const IconData bottomNavigationIcon2 = Icons.shopping_bag;
+  const IconData bottomNavigationIcon3 = Icons.person;
+  const IconData bottomNavigationIcon4 = Icons.card_giftcard;
+
+  return BottomAppBar(
+    color: AppColors.surface,
+    padding: AppSizes.zero,
+    height: AppSizes.bottomHeight,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        _buildInkWellItem(
+          bottomNavigationIcon0,
+          bottomNavigationItem0,
+          0,
+          navigationShell: navigationShell,
+        ),
+        _buildInkWellItem(
+          bottomNavigationIcon1,
+          bottomNavigationItem1,
+          1,
+          navigationShell: navigationShell,
+        ),
+        _buildInkWellItem(
+          bottomNavigationIcon2,
+          bottomNavigationItem2,
+          2,
+          navigationShell: navigationShell,
+        ), // Orta buton artık normal
+        _buildInkWellItem(
+          bottomNavigationIcon3,
+          bottomNavigationItem3,
+          3,
+          navigationShell: navigationShell,
+        ),
+        _buildInkWellItem(
+          bottomNavigationIcon4,
+          bottomNavigationItem4,
+          4,
+          navigationShell: navigationShell,
+        ),
+      ],
+    ),
+  );
+}
+
+// old bottombar
 Widget bottomNavigationBar(StatefulNavigationShell navigationShell) {
   return BottomNavigationBar(
     onTap: (index) {
@@ -143,6 +128,46 @@ Widget bottomNavigationBar(StatefulNavigationShell navigationShell) {
   );
 }
 
+//* Methods
+Widget _buildInkWellItem(
+  IconData icon,
+  String label,
+  int index, {
+  required StatefulNavigationShell navigationShell,
+}) {
+  bool isSelected = navigationShell.currentIndex == index;
+
+  return Expanded(
+    child: InkResponse(
+      onTap: () {
+        navigationShell.goBranch(index);
+      },
+      // Dalga efekti rengi
+      highlightColor: AppColors.primary.withAlpha(20),
+      splashColor: AppColors.primary.withAlpha(50),
+      splashFactory: InkRipple.splashFactory,
+      // customBorder: StadiumBorder(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            color: isSelected ? AppColors.primary : AppColors.textSecondary,
+            size: AppSizes.iconXl,
+          ),
+          // const SizedBox(height: 4),
+          Text(
+            label,
+            style: AppTextStyles.withColor(
+              AppTextStyles.bottonNavigationBarLabel,
+              isSelected ? AppColors.primary : AppColors.textSecondary,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
 
 /*
 

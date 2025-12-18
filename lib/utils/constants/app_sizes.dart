@@ -1,7 +1,10 @@
+import 'package:flutter/widgets.dart';
+
 class AppSizes {
   AppSizes._();
 
   // Padding And Margin Sizes
+  static const EdgeInsets zero = EdgeInsets.zero;
   static const double xs = 4.0;
   static const double sm = 8.0;
   static const double md = 16.0;
@@ -68,4 +71,7 @@ class AppSizes {
 
   // Grid view spacing
   static const double gridViewSpacing = 16.0;
+
+  //BottomAppBarSizes
+  static const double bottomHeight = 60.0;
 }
