@@ -42,7 +42,7 @@ Widget _bottomAppBar(StatefulNavigationShell navigationShell) {
   // BottomNavigationBar Item Names
   const String bottomNavigationItem0 = "Home";
   const String bottomNavigationItem1 = "Search";
-  const String bottomNavigationItem2 = "Card";
+  const String bottomNavigationItem2 = "Cart";
   const String bottomNavigationItem3 = "Profile";
   const String bottomNavigationItem4 = "Deals";
 

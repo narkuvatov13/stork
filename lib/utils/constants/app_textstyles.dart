@@ -23,11 +23,18 @@ class AppTextStyles {
   static TextStyle h3 = TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 18,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1.2,
     letterSpacing: -0.5,
   );
 
+  static TextStyle h4 = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    height: 1.2,
+    letterSpacing: -0.5,
+  );
   // *body text
   static TextStyle bodyLarge = TextStyle(
     fontFamily: 'Montserrat',
@@ -45,6 +52,11 @@ class AppTextStyles {
   static TextStyle bodySmall = TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 14,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle bodyXsSmall = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 8,
     fontWeight: FontWeight.w400,
   );
 

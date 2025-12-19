@@ -74,7 +74,8 @@ flutter:
 # Assets
   assets:
     - assets/images/
-    - assets/images/categories/
+    - assets/images/stork_images/categories/
+    - assets/images/stork_images/apps_images/
     - assets/images/splash/
     - assets/icons/brands/
     - assets/logos/

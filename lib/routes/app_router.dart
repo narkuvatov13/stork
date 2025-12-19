@@ -15,7 +15,7 @@ class AppRoutes {
   static const String appHomePage = '/';
   static const String storkShopHomePage = '/stork-shop-home';
   static const String storkShopSearchPage = '/stork-shop-search';
-  static const String storkShopCardPage = '/stork-shop-card';
+  static const String storkShopCartPage = '/stork-shop-cart';
   static const String storkShopProfilePage = '/stork-shop-profile';
   static const String storkShopOffersPage = '/stork-shop-offers';
   static const String storkShopOrdersPage = '/stork-shop-orders';
@@ -47,7 +47,7 @@ final GoRouter router = GoRouter(
         StatefulShellBranch(
           routes: [
             GoRoute(
-              path: AppRoutes.storkShopCardPage,
+              path: AppRoutes.storkShopCartPage,
               builder: (context, state) => StorkShopCardPage(),
             ),
           ],

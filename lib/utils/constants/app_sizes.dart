@@ -28,6 +28,61 @@ class AppSizes {
   static const double buttonWidth = 120.0;
   static const double buttonElevation = 4.0;
 
+  // Buton Press Scale Sizes
+  static const double scaleSizeSm = 0.96;
+  static const double scaleSizeMd = 1.0;
+
+  // Opacity
+  static const int opacity10 = 10;
+  static const int opacity20 = 20;
+  static const int opacity30 = 30;
+  static const int opacity40 = 40;
+  static const int opacity50 = 50;
+  static const int opacity60 = 60;
+  static const int opacity70 = 70;
+  static const int opacity80 = 80;
+  static const int opacity90 = 90;
+  static const int opacity100 = 100;
+
+  //Height
+  static const double height50 = 50;
+  static const double height100 = 100;
+  static const double height150 = 150;
+  static const double height200 = 200;
+  static const double height250 = 250;
+  static const double height300 = 300;
+  static const double height350 = 350;
+  static const double height400 = 400;
+  static const double height450 = 450;
+  static const double height500 = 500;
+  static const double height550 = 550;
+  static const double height600 = 600;
+  static const double height650 = 650;
+  static const double height700 = 700;
+  static const double height750 = 750;
+  static const double height800 = 800;
+  static const double height850 = 850;
+  static const double height900 = 900;
+
+  //Width
+  static const double width50 = 50;
+  static const double width100 = 100;
+  static const double width150 = 150;
+  static const double width200 = 200;
+  static const double width250 = 250;
+  static const double width300 = 300;
+  static const double width350 = 350;
+  static const double width400 = 400;
+  static const double width450 = 450;
+  static const double width500 = 500;
+  static const double width550 = 550;
+  static const double width600 = 600;
+  static const double width650 = 650;
+  static const double width700 = 700;
+  static const double width750 = 750;
+  static const double width800 = 800;
+  static const double width850 = 850;
+  static const double width900 = 900;
   // AppBar Height
   static const double appbarHeight = 56.0;
 
@@ -65,6 +120,10 @@ class AppSizes {
 
   // Image Carousel Height
   static const double imageCarouselHeight = 200.0;
+  static const double imagePositionedBottom = 0;
+  static const double imagePositionedTop = -5.0;
+  static const double imagePositionedLeft = 0;
+  static const double imagePositionedRight = 0;
 
   // Loading Indicator Size
   static const double loadingIndicatorSize = 36.0;
