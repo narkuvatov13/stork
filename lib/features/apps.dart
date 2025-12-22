@@ -16,48 +16,240 @@ class _AppsState extends State<Apps> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            _AppsCard(
-              cardRoute: AppRoutes.storkShopHomePage,
-              cardImage: 'assets/images/stork_images/apps_images/sepet1.webp',
-              cardName: 'Stork Market',
-              cardTitle: 'With Stork, all your needs are delivered to your door.',
-              cardHeight: 100,
-              cardWidth: 100,
+      appBar: AppBar(title: Text('Stork')),
+
+      // bottomSheet: BottomSheet(
+      //   onClosing: () {},
+      //   builder: (BuildContext context) {
+      //     return SizedBox(height: 400, width: 200);
+      //   },
+      // ),
+      body: Column(
+        children: [
+          // Section Address
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: AppSizes.sm, vertical: AppSizes.md),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                //left section
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Address Modal Bottom
+                      showModalBottomSheet(
+                        useRootNavigator: true,
+                        context: context,
+                        useSafeArea: true,
+                        isScrollControlled: true,
+                        builder: (context) {
+                          return SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.75,
+                            child: Stack(
+                              children: [
+                                // Modal body
+                                SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      SingleChildScrollView(
+                                        child: Column(
+                                          children: List.generate(
+                                            10,
+                                            (i) => Container(
+                                              height: 200,
+                                              margin: const EdgeInsets.all(8),
+                                              color: Colors.grey.shade300,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                // Modal Top Section
+                                Positioned(
+                                  top: 0,
+                                  left: 0,
+                                  right: 0,
+                                  child: Container(
+                                    color: AppColors.surface,
+                                    padding: const EdgeInsets.all(AppSizes.md),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Select delivery address',
+                                          style: AppTextStyles.withColor(
+                                            AppTextStyles.bodySmall,
+                                            AppColors.textSecondary,
+                                          ),
+                                        ),
+                                        TextButton.icon(
+                                          onPressed: () {},
+                                          label: Text(
+                                            'My addresses',
+                                            style: AppTextStyles.withColor(
+                                              AppTextStyles.bodySmall,
+                                              AppColors.primary,
+                                            ),
+                                          ),
+                                          icon: Icon(Icons.location_pin, color: AppColors.primary),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+
+                                // appDivider(),
+
+                                // Modal Bottom Section
+                                Positioned(
+                                  bottom: 0,
+                                  left: 0,
+                                  right: 0,
+                                  child: InkWell(
+                                    onTap: () {},
+                                    child: Container(
+                                      padding: EdgeInsets.all(AppSizes.md),
+                                      color: AppColors.surface,
+                                      child: Row(
+                                        spacing: AppSizes.spaceBtwItems,
+                                        children: [
+                                          Icon(
+                                            Icons.add,
+                                            color: AppColors.primary,
+                                            size: AppSizes.iconMd,
+                                          ),
+                                          Text(
+                                            'Add New Address',
+                                            style: AppTextStyles.withColor(
+                                              AppTextStyles.bodyXsSmall,
+                                              AppColors.primary,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: Icon(
+                              Icons.location_pin,
+                              color: AppColors.primary,
+                              size: AppSizes.iconMd,
+                            ),
+                          ),
+                          TextSpan(
+                            text: 'No Address Information Available',
+                            style: AppTextStyles.withColor(
+                              AppTextStyles.bodyXsSmall,
+                              AppColors.textPrimary,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                // Right Section
+                GestureDetector(
+                  onTap: () {},
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Add Address",
+                          style: AppTextStyles.withColor(
+                            AppTextStyles.bodyXsSmall,
+                            AppColors.primary,
+                          ),
+                        ),
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: Icon(Icons.add, color: AppColors.primary, size: AppSizes.iconMd),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-            _AppsCard(
-              cardRoute: '',
-              cardImage: 'assets/images/stork_images/apps_images/burger.png',
-              cardName: 'Stork Foods',
-              cardTitle: 'Over 100 restaurants',
-              cardHeight: 100,
-              cardWidth: 100,
+          ),
+          // Section PageView
+          Expanded(
+            flex: AppSizes.flex3,
+            child: PageView(
+              children: [
+                Container(height: 200, width: 200, color: Colors.pink),
+                Container(height: 200, width: 200, color: Colors.red),
+                Container(height: 200, width: 200, color: Colors.green),
+              ],
             ),
-            _AppsCard(
-              cardRoute: '',
-              cardImage: 'assets/images/stork_images/apps_images/damacana.png',
-              cardName: 'Stork Water',
-              cardHeight: 100,
-              cardWidth: 100,
-            ),
-            _AppsCard(
-              cardRoute: '',
-              cardImage: 'assets/images/stork_images/apps_images/taxi.png',
-              cardName: 'Stork Taxi',
-              cardHeight: 100,
-              cardWidth: 100,
-            ),
-          ],
-        ),
+          ),
+          // Section Body Item Cards
+          Expanded(flex: AppSizes.flex6, child: appBody()),
+        ],
       ),
     );
   }
 }
 
+// Apps Page Body
+Widget appBody() {
+  return Padding(
+    padding: const EdgeInsets.all(AppSizes.md),
+    child: Wrap(
+      spacing: AppSizes.spaceBtwItems,
+      runSpacing: AppSizes.spaceBtwItems,
+      children: [
+        _AppsCard(
+          cardRoute: AppRoutes.storkShopHomePage,
+          cardImage: 'assets/images/stork_images/apps_images/sepet1.webp',
+          cardName: 'Stork Market',
+          cardTitle: '5000+ products at affordable prices.',
+          cardHeight: 120,
+          cardWidth: 100,
+        ),
+        _AppsCard(
+          cardRoute: '',
+          cardImage: 'assets/images/stork_images/apps_images/burger.png',
+          cardName: 'Stork Foods',
+          cardTitle: 'Over 100 restaurants',
+          cardHeight: 120,
+          cardWidth: 100,
+        ),
+        _AppsCard(
+          cardRoute: '',
+          cardImage: 'assets/images/stork_images/apps_images/damacana.png',
+          cardName: 'Stork Water',
+          cardHeight: 100,
+          cardWidth: 100,
+        ),
+        _AppsCard(
+          cardRoute: '',
+          cardImage: 'assets/images/stork_images/apps_images/taxi.png',
+          cardName: 'Stork Taxi',
+          cardHeight: 100,
+          cardWidth: 100,
+        ),
+      ],
+    ),
+  );
+}
+
+// Apps Page Body Cards
 class _AppsCard extends StatefulWidget {
   final String cardRoute;
   final String cardName;

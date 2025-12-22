@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 // Color textSecondary = Color(0xFF6F6F6F);
 
 class AppColors {
-  AppColors._();  
+  AppColors._();
 
   // App Basic Colors
   static const Color primary = Color(0xFF0B8F4D);
@@ -36,6 +36,7 @@ class AppColors {
   // static const Color dark = Color(0xFFFFFFFF);
   static const Color primaryBackground = Color(0xFFF7F9F8);
   static const Color surface = Color(0xFFFFFFFF);
+  static const Color surfaceGrey = Color(0xD9EBEBEB);
 
   // Background Container Colors as Card
   static const Color lightContainer = Color(0xFFFFFFFF);
@@ -60,10 +61,10 @@ class AppColors {
   static const Color info = Color(0xFF1976D2);
 
   // Neutural Shades
-  static const Color black = Color(0x00000000);
-  static const Color darkerGrey = Color(0x00000000);
-  static const Color darkGrey = Color(0x00000000);
-  static const Color grey = Color(0x00000000);
+  static const Color black = Colors.black;
+  static const Color darkerGrey = Color(0xFF474747);
+  static const Color darkGrey = Color(0xFF666666);
+  static const Color grey = Color(0xFF9E9E9E);
   static const Color white = Color(0xFFFFFFFF);
 
   //

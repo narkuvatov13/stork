@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:stork/utils/constants/app_sizes.dart';
+import 'package:stork/utils/widgets/search_bar_widget.dart';
 
 class StorkShopHomePage extends ConsumerStatefulWidget {
   const StorkShopHomePage({super.key});
@@ -11,7 +13,20 @@ class StorkShopHomePage extends ConsumerStatefulWidget {
 class _StorkShopHomePageState extends ConsumerState<StorkShopHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Home Page')));
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(AppSizes.md),
+        child: Column(
+          children: [
+            // Product Search
+            searchBarWiddget('Product Search ...', () {}),
+
+            //Cattegories
+            
+          ],
+        ),
+      ),
+    );
   }
 }
 

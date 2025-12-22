@@ -56,7 +56,7 @@ class AppTextStyles {
   );
   static TextStyle bodyXsSmall = TextStyle(
     fontFamily: 'Montserrat',
-    fontSize: 8,
+    fontSize: 12,
     fontWeight: FontWeight.w400,
   );
 
@@ -83,7 +83,7 @@ class AppTextStyles {
   );
 
   // * Label Text
-  static TextStyle labelMeium = TextStyle(
+  static TextStyle labelMedium = TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 14,
     fontWeight: FontWeight.w500,

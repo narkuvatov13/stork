@@ -1,10 +1,8 @@
-import 'package:flutter/widgets.dart';
-
 class AppSizes {
   AppSizes._();
 
   // Padding And Margin Sizes
-  static const EdgeInsets zero = EdgeInsets.zero;
+  static const double zero = 0.0;
   static const double xs = 4.0;
   static const double sm = 8.0;
   static const double md = 16.0;
@@ -18,6 +16,7 @@ class AppSizes {
   static const double iconXl = 32.0;
 
   // Font Sizes
+  static const double fontSizeXs = 12.0;
   static const double fontSizeSm = 14.0;
   static const double fontSizeMd = 16.0;
   static const double fontSizeLg = 18.0;
@@ -45,7 +44,9 @@ class AppSizes {
   static const int opacity100 = 100;
 
   //Height
+  static const double height0 = 0;
   static const double height50 = 50;
+  static const double height80 = 80;
   static const double height100 = 100;
   static const double height150 = 150;
   static const double height200 = 200;
@@ -66,6 +67,7 @@ class AppSizes {
 
   //Width
   static const double width50 = 50;
+  static const double width80 = 80;
   static const double width100 = 100;
   static const double width150 = 150;
   static const double width200 = 200;
@@ -83,6 +85,18 @@ class AppSizes {
   static const double width800 = 800;
   static const double width850 = 850;
   static const double width900 = 900;
+
+  static const int flex1 = 1;
+  static const int flex2 = 2;
+  static const int flex3 = 3;
+  static const int flex4 = 4;
+  static const int flex5 = 5;
+  static const int flex6 = 6;
+  static const int flex7 = 7;
+  static const int flex8 = 8;
+  static const int flex9 = 9;
+  static const int flex10 = 10;
+
   // AppBar Height
   static const double appbarHeight = 56.0;
 

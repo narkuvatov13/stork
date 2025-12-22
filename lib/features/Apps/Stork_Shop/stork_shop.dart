@@ -54,9 +54,6 @@ Widget _bottomAppBar(StatefulNavigationShell navigationShell) {
   const IconData bottomNavigationIcon4 = Icons.card_giftcard;
 
   return BottomAppBar(
-    color: AppColors.surface,
-    padding: AppSizes.zero,
-    height: AppSizes.bottomHeight,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [

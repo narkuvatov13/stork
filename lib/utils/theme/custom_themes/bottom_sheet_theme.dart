@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stork/utils/constants/app_colors.dart';
+import 'package:stork/utils/constants/app_sizes.dart';
 
 class YBottomSheetTheme {
   YBottomSheetTheme._();
@@ -6,10 +8,12 @@ class YBottomSheetTheme {
   //light
   static BottomSheetThemeData lightBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor: Colors.white,
-    modalBackgroundColor: Colors.white,
+    backgroundColor: AppColors.surface,
+    modalBackgroundColor: AppColors.surface,
     constraints: const BoxConstraints(minWidth: double.infinity),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.lg)),
+    dragHandleColor: AppColors.primary.withAlpha(AppSizes.opacity50),
+    dragHandleSize: Size(80, 3),
   );
 
   //dark
@@ -18,6 +22,6 @@ class YBottomSheetTheme {
     backgroundColor: Colors.black,
     modalBackgroundColor: Colors.black,
     constraints: const BoxConstraints(minWidth: double.infinity),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.lg)),
   );
 }
