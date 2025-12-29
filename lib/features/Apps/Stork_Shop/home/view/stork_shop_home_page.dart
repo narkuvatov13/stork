@@ -1,7 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:stork/data/controllers/category_data.dart';
+import 'package:stork/features/Apps/Stork_Shop/widgets/categories_widget/categorie_card_widget.dart';
+import 'package:stork/features/Apps/Stork_Shop/widgets/categories_widget/categories_header_widget.dart';
+import 'package:stork/features/Apps/Stork_Shop/widgets/search_bar_widget.dart';
+import 'package:stork/routes/app_router.dart';
 import 'package:stork/utils/constants/app_sizes.dart';
-import 'package:stork/utils/widgets/search_bar_widget.dart';
+import 'package:stork/utils/constants/app_textstyles.dart';
 
 class StorkShopHomePage extends ConsumerStatefulWidget {
   const StorkShopHomePage({super.key});
@@ -14,21 +21,106 @@ class _StorkShopHomePageState extends ConsumerState<StorkShopHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(AppSizes.md),
-        child: Column(
-          children: [
-            // Product Search
-            searchBarWiddget('Product Search ...', () {}),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(title: Text('Stork', style: AppTextStyles.h2), pinned: true),
+          SliverPadding(
+            padding: EdgeInsets.only(left: AppSizes.md, right: AppSizes.md, top: AppSizes.md),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(childCount: 1, (
+                BuildContext context,
+                int index,
+              ) {
+                return Column(
+                  children: [
+                    // Product Search
+                    SizedBox(
+                      width: double.infinity,
+                      child: searchBarWiddget('Product Search ...', () {}),
+                    ),
 
-            //Cattegories
-            
-          ],
-        ),
+                    SizedBox(height: AppSizes.md),
+
+                    // Categories Title
+                    CategoriesHeaderWidget(
+                      title: 'Categories',
+                      actionText: 'All Products',
+                      onTap: () {},
+                    ),
+                  ],
+                );
+              }),
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.only(left: AppSizes.md, right: AppSizes.md),
+            sliver: SliverGrid(
+              delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
+                final category = CategoryData.categories[index];
+                return CategorieCard(
+                  imagePath: category.imagePath,
+                  title: category.title,
+                  onTap: () {
+                    // print(StorkRoutesName.storkShopProductsPage);
+                    context.pushNamed(StorkRoutesName.storkShopProductsPage);
+                  },
+                );
+              }, childCount: 10),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                childAspectRatio: 0.75,
+                crossAxisSpacing: AppSizes.sm,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
+
+
+//  CategorieCard(
+//                           imagePath: 'assets/images/stork_images/categories/snacks.png',
+//                           title: 'Et & Donmus Gidalar',
+//                           // onTap: () {},
+//                         ),
+//                         CategorieCard(
+//                           imagePath: 'assets/images/stork_images/categories/snacks.png',
+//                           title: 'Et & Donmus Gidalar',
+//                           // onTap: () {},
+//                         ),
+//                         CategorieCard(
+//                           imagePath: 'assets/images/stork_images/categories/snacks.png',
+//                           title: 'Et & Donmus Gidalar',
+//                           // onTap: () {},
+//                         ),
+//                         CategorieCard(
+//                           imagePath: 'assets/images/stork_images/categories/snacks.png',
+//                           title: 'Et & Donmus Gidalar',
+//                           // onTap: () {},
+//                         ),
+
+
+// Padding(
+//         padding: EdgeInsets.all(AppSizes.md),
+//         child: Column(
+//           children: [
+//             // Product Search
+//             SizedBox(width: double.infinity, child: searchBarWiddget('Product Search ...', () {})),
+
+//             SizedBox(height: AppSizes.md),
+//             //Cattegories
+//             // Categories Title
+//             CategoriesHeaderWidget(title: 'Categories', actionText: 'All Products', onTap: () {}),
+//             // Categories List
+//             SizedBox(height: AppSizes.md),
+//             CategorieCardLists(),
+//           ],
+//         ),
+//       ),
+
 
 /*
 

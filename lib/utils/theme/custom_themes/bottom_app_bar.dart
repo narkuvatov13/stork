@@ -9,5 +9,6 @@ class YBottomAppBar {
     color: AppColors.surface,
     padding: EdgeInsets.all(AppSizes.zero),
     height: AppSizes.bottomHeight,
+    surfaceTintColor: Colors.transparent,
   );
 }

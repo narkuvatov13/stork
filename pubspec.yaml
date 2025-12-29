@@ -52,6 +52,7 @@ dependencies:
   # Google Maps API key gerektirmez
   # Teslimat adresi oluşturmak için yeterli
   geocoding: ^4.0.0
+  get_it: ^9.2.0
 
 
 # Packages End

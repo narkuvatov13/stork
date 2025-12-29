@@ -215,7 +215,7 @@ Widget appBody() {
       runSpacing: AppSizes.spaceBtwItems,
       children: [
         _AppsCard(
-          cardRoute: AppRoutes.storkShopHomePage,
+          cardRoute: StorkRoutes.storkShopHomePage,
           cardImage: 'assets/images/stork_images/apps_images/sepet1.webp',
           cardName: 'Stork Market',
           cardTitle: '5000+ products at affordable prices.',

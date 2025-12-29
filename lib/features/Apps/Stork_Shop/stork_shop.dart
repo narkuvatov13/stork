@@ -18,7 +18,7 @@ class _StorkShopState extends ConsumerState<StorkShop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(),
+      // appBar: _appBar(),
       body: widget.navigationShell,
       bottomNavigationBar: _bottomAppBar(widget.navigationShell),
     );
@@ -28,13 +28,13 @@ class _StorkShopState extends ConsumerState<StorkShop> {
 //* Widgets
 
 // App Bar Widget
-AppBar _appBar() {
-  return AppBar(
-    foregroundColor: Colors.white,
-    title: Text('Stork'),
-    actions: [Icon(Icons.shopping_bag)],
-  );
-}
+// AppBar _appBar() {
+//   return AppBar(
+//     foregroundColor: Colors.white,
+//     title: Text('Stork'),
+//     actions: [Icon(Icons.shopping_bag)],
+//   );
+// }
 
 // BottomNavigationBar Widget
 // new
@@ -44,7 +44,7 @@ Widget _bottomAppBar(StatefulNavigationShell navigationShell) {
   const String bottomNavigationItem1 = "Search";
   const String bottomNavigationItem2 = "Cart";
   const String bottomNavigationItem3 = "Profile";
-  const String bottomNavigationItem4 = "Deals";
+  const String bottomNavigationItem4 = "Offers";
 
   // BottomNavigationBar Item Icons
   const IconData bottomNavigationIcon0 = Icons.home;
@@ -92,39 +92,6 @@ Widget _bottomAppBar(StatefulNavigationShell navigationShell) {
   );
 }
 
-// old bottombar
-Widget bottomNavigationBar(StatefulNavigationShell navigationShell) {
-  return BottomNavigationBar(
-    onTap: (index) {
-      navigationShell.goBranch(index);
-    },
-    currentIndex: navigationShell.currentIndex,
-    type: BottomNavigationBarType.fixed,
-    selectedIconTheme: IconThemeData(color: AppColors.primary),
-    unselectedIconTheme: IconThemeData(color: AppColors.textSecondary),
-    selectedItemColor: AppColors.primary,
-    unselectedItemColor: AppColors.textSecondary,
-    showSelectedLabels: true,
-    showUnselectedLabels: true,
-    selectedFontSize: 12.0,
-    unselectedFontSize: 12.0,
-    backgroundColor: AppColors.surface,
-    selectedLabelStyle: AppTextStyles.bottonNavigationBarLabel,
-    iconSize: AppSizes.xl,
-
-    // backgroundColor: Colors.amber,
-    items: [
-      BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-      BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-
-      BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: 'Card'),
-
-      BottomNavigationBarItem(icon: Icon(Icons.receipt_long), label: 'Orders'),
-      BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-    ],
-  );
-}
-
 //* Methods
 Widget _buildInkWellItem(
   IconData icon,
@@ -165,6 +132,43 @@ Widget _buildInkWellItem(
     ),
   );
 }
+
+
+// old bottombar
+// Widget bottomNavigationBar(StatefulNavigationShell navigationShell) {
+//   return BottomNavigationBar(
+//     onTap: (index) {
+//       navigationShell.goBranch(index);
+//     },
+//     currentIndex: navigationShell.currentIndex,
+//     type: BottomNavigationBarType.fixed,
+//     selectedIconTheme: IconThemeData(color: AppColors.primary),
+//     unselectedIconTheme: IconThemeData(color: AppColors.textSecondary),
+//     selectedItemColor: AppColors.primary,
+//     unselectedItemColor: AppColors.textSecondary,
+//     showSelectedLabels: true,
+//     showUnselectedLabels: true,
+//     selectedFontSize: AppSizes.fontSizeXs,
+//     unselectedFontSize: AppSizes.fontSizeXs,
+//     backgroundColor: AppColors.surface,
+//     selectedLabelStyle: AppTextStyles.bottonNavigationBarLabel,
+//     iconSize: AppSizes.iconMd,
+
+//     // backgroundColor: Colors.amber,
+//     items: [
+//       BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+//       BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+
+//       BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: 'Cart'),
+
+//       BottomNavigationBarItem(icon: Icon(Icons.receipt_long), label: 'Orders'),
+//       BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+//     ],
+//   );
+// }
+
+
+
 
 /*
 
