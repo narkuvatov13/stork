@@ -12,11 +12,14 @@ class YAppBarTheme {
     centerTitle: true,
     scrolledUnderElevation: 0,
     backgroundColor: AppColors.primary,
-    foregroundColor: Colors.amber,
+    // foregroundColor: Colors.amber,
     // surfaceTintColor: AppColors.surface,
-    iconTheme: const IconThemeData(color: AppColors.onPrimary, size: 24),
-    actionsIconTheme: const IconThemeData(color: AppColors.onPrimary, size: 24),
-    titleTextStyle: AppTextStyles.withColor(AppTextStyles.h2, AppColors.onPrimary),
+    iconTheme: const IconThemeData(color: AppColors.onPrimary, size: AppSizes.iconMd),
+    actionsIconTheme: const IconThemeData(color: AppColors.onPrimary, size: AppSizes.iconMd),
+    titleTextStyle: AppTextStyles.withColor(
+      AppTextStyles.withWeight(AppTextStyles.bodyMedium, FontWeight.w500),
+      AppColors.onPrimary,
+    ),
     actionsPadding: EdgeInsets.all(AppSizes.sm),
   );
 

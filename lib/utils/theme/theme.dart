@@ -20,19 +20,19 @@ class YAppTheme {
   YAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
-    textButtonTheme: YTextButtonTheme.textButtonThemeData,
     fontFamily: 'Montserrat',
-    brightness: Brightness.light,
-    primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.primaryBackground,
-    textTheme: YTextTheme.lightTextTheme,
-    elevatedButtonTheme: YElevevatedButtonTheme.lightElevatedButtonTheme,
-    chipTheme: YChipTheme.lightChipTheme,
     appBarTheme: YAppBarTheme.lightAppBarTheme,
     bottomNavigationBarTheme: YBottomNavigationBarTheme.bottomNavigationBarTheme,
     bottomAppBarTheme: YBottomAppBar.lightBottomAppBarTheme,
-    checkboxTheme: YCheckBoxTheme.lightCheckBoxTheme,
     bottomSheetTheme: YBottomSheetTheme.lightBottomSheetTheme,
+    textButtonTheme: YTextButtonTheme.textButtonThemeData,
+    brightness: Brightness.light,
+    primaryColor: AppColors.primary,
+    textTheme: YTextTheme.lightTextTheme,
+    elevatedButtonTheme: YElevevatedButtonTheme.lightElevatedButtonTheme,
+    chipTheme: YChipTheme.lightChipTheme,
+    checkboxTheme: YCheckBoxTheme.lightCheckBoxTheme,
     outlinedButtonTheme: YOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: YTextFormFieldTheme.lightInputDecorationTheme,
     iconTheme: const IconThemeData(color: AppColors.primary, size: AppSizes.iconXl),
@@ -43,8 +43,8 @@ class YAppTheme {
       indicatorAnimation: TabIndicatorAnimation.elastic,
       labelColor: AppColors.onPrimary,
       unselectedLabelColor: AppColors.onPrimary,
-      labelStyle: AppTextStyles.h4,
-      unselectedLabelStyle: AppTextStyles.h4,
+      labelStyle: AppTextStyles.withWeight(AppTextStyles.bodyMedium, FontWeight.w500),
+      unselectedLabelStyle: AppTextStyles.withWeight(AppTextStyles.bodyMedium, FontWeight.w500),
     ),
   );
 
