@@ -39,12 +39,16 @@ class YAppTheme {
     textSelectionTheme: YTextSelectionTheme.textSelectionThemeData,
     searchBarTheme: YSearchBarTheme.searchBarThemeData,
     tabBarTheme: TabBarThemeData(
-      indicatorColor: AppColors.secondary,
+      indicatorColor: AppColors.primary,
       indicatorAnimation: TabIndicatorAnimation.elastic,
-      labelColor: AppColors.onPrimary,
-      unselectedLabelColor: AppColors.onPrimary,
-      labelStyle: AppTextStyles.withWeight(AppTextStyles.bodyMedium, FontWeight.w500),
-      unselectedLabelStyle: AppTextStyles.withWeight(AppTextStyles.bodyMedium, FontWeight.w500),
+      labelColor: AppColors.primary,
+      unselectedLabelColor: AppColors.textPrimary,
+      labelStyle: AppTextStyles.withWeight(AppTextStyles.bodySmall, FontWeight.w500),
+      unselectedLabelStyle: AppTextStyles.withWeight(AppTextStyles.bodySmall, FontWeight.w500),
+      indicator: BoxDecoration(
+        border: BoxBorder.fromLTRB(bottom: BorderSide(color: AppColors.primary, width: 2)),
+      ),
+      dividerHeight: 2,
     ),
   );
 

@@ -33,22 +33,22 @@ class _StorkShopProductsPage extends ConsumerState<StorkShopProductsPage>
       body: Column(
         children: [
           Material(
-            color: AppColors.tertinary,
+            color: AppColors.surface,
             child: TabBar(
               tabAlignment: TabAlignment.start,
               controller: _tabController,
               isScrollable: true,
               labelPadding: EdgeInsets.only(left: AppSizes.md, right: AppSizes.md),
-              // padding: EdgeInsets.zero,
+              indicatorSize: TabBarIndicatorSize.tab,
               tabs: [
-                Tab(text: 'Tab1111111'),
-                Tab(text: 'Tab2222'),
-                Tab(text: 'Tab33'),
-                Tab(text: 'Tab4'),
-                Tab(text: 'Tab5'),
-                Tab(text: 'Tab6'),
-                Tab(text: 'Tab7'),
-                Tab(text: 'Tab8'),
+                Tab(text: 'Temel Gida'),
+                Tab(text: 'Atistirmalik'),
+                Tab(text: 'Meyve& Sebze'),
+                Tab(text: 'Et,Tavuk & Balik'),
+                Tab(text: 'Sut Urunleri'),
+                Tab(text: 'Su & Icecek'),
+                Tab(text: 'Kahvaltilik'),
+                Tab(text: 'Dondurma'),
               ],
             ),
           ),
