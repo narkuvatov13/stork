@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stork/utils/constants/app_colors.dart';
 import 'package:stork/utils/constants/app_sizes.dart';
-import 'package:stork/utils/constants/app_textstyles.dart';
 import 'package:stork/utils/theme/custom_themes/appbar_theme.dart';
 import 'package:stork/utils/theme/custom_themes/bottom_app_bar.dart';
 import 'package:stork/utils/theme/custom_themes/bottom_sheet_theme.dart';
@@ -39,12 +38,14 @@ class YAppTheme {
     textSelectionTheme: YTextSelectionTheme.textSelectionThemeData,
     searchBarTheme: YSearchBarTheme.searchBarThemeData,
     tabBarTheme: TabBarThemeData(
+      tabAlignment: TabAlignment.start,
+      indicatorSize: TabBarIndicatorSize.tab,
       indicatorColor: AppColors.primary,
       indicatorAnimation: TabIndicatorAnimation.elastic,
+      // labelStyle: AppTextStyles.withWeight(AppTextStyles.bodySmall, FontWeight.w700),
       labelColor: AppColors.primary,
-      unselectedLabelColor: AppColors.textPrimary,
-      labelStyle: AppTextStyles.withWeight(AppTextStyles.bodySmall, FontWeight.w500),
-      unselectedLabelStyle: AppTextStyles.withWeight(AppTextStyles.bodySmall, FontWeight.w500),
+      labelPadding: EdgeInsets.only(left: AppSizes.md, right: AppSizes.md),
+      unselectedLabelColor: AppColors.textSecondary,
       indicator: BoxDecoration(
         border: BoxBorder.fromLTRB(bottom: BorderSide(color: AppColors.primary, width: 2)),
       ),

@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter/material.dart';
-import 'package:stork/features/Apps/Stork_Shop/widgets/categories_widget/categorie_card_widget.dart';
+import 'package:stork/features/Apps/Stork_Shop/widgets/categories/categorie_card.dart';
 
 class CategorieCardLists {
   CategorieCardLists();

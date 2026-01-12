@@ -309,16 +309,19 @@ class _AppsCardState extends State<_AppsCard> {
           },
           splashColor: AppColors.primary.withAlpha(AppSizes.opacity30),
           borderRadius: BorderRadius.circular(AppSizes.borderRadiusLg),
-          child: SizedBox(
-            width: widget.cardWidth * 1.5,
-            height: widget.cardHeight * 1.5,
-            child: Stack(
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
+          child: Padding(
+            padding: const EdgeInsets.only(left: AppSizes.md, right: AppSizes.md, top: AppSizes.md),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minWidth: AppSizes.widthMin120,
+                maxWidth: AppSizes.widthMax120,
+                minHeight: AppSizes.height100,
+                maxHeight: AppSizes.height150,
+              ),
+              child: Stack(
+                children: [
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    // mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         softWrap: true,
@@ -326,7 +329,6 @@ class _AppsCardState extends State<_AppsCard> {
                         widget.cardName,
                         style: AppTextStyles.withColor(AppTextStyles.h3, AppColors.primary),
                       ),
-
                       Visibility(
                         visible: widget.cardTitle != null,
                         child: Text(
@@ -339,17 +341,18 @@ class _AppsCardState extends State<_AppsCard> {
                       ),
                     ],
                   ),
-                ),
-                Positioned(
-                  bottom: AppSizes.imagePositionedBottom,
-                  right: AppSizes.imagePositionedRight,
-                  child: Image.asset(
-                    widget.cardImage,
-                    height: widget.cardHeight,
-                    width: widget.cardWidth,
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Image.asset(
+                      widget.cardImage,
+                      height: AppSizes.height100,
+                      width: AppSizes.width100,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -360,13 +363,6 @@ class _AppsCardState extends State<_AppsCard> {
 
 
 /*
-
-
-
-
-
-
-
 
 
 

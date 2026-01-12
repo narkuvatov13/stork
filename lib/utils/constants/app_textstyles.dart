@@ -86,6 +86,17 @@ class AppTextStyles {
   static TextStyle labelMedium = TextStyle(
     fontFamily: 'Montserrat',
     fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle labelSmall = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle labelXsSmall = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 10,
     fontWeight: FontWeight.w500,
   );
   static TextStyle bottonNavigationBarLabel = TextStyle(

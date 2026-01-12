@@ -2,22 +2,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:stork/data/controllers/category_data.dart';
-import 'package:stork/features/Apps/Stork_Shop/widgets/categories_widget/categorie_card_widget.dart';
-import 'package:stork/features/Apps/Stork_Shop/widgets/categories_widget/categories_header_widget.dart';
-import 'package:stork/features/Apps/Stork_Shop/widgets/search_bar_widget.dart';
+import 'package:stork/features/Apps/Stork_Shop/data/models/category_model.dart';
+import 'package:stork/features/Apps/Stork_Shop/data/repository/category_repository.dart';
+import 'package:stork/features/Apps/Stork_Shop/widgets/categories/categorie_card.dart';
+import 'package:stork/features/Apps/Stork_Shop/widgets/categories/categories_header.dart';
+import 'package:stork/features/Apps/Stork_Shop/widgets/search_bar.dart';
 import 'package:stork/routes/app_router.dart';
 import 'package:stork/utils/constants/app_sizes.dart';
 import 'package:stork/utils/constants/app_textstyles.dart';
 
 class StorkShopHomePage extends ConsumerStatefulWidget {
   const StorkShopHomePage({super.key});
-
   @override
   ConsumerState<StorkShopHomePage> createState() => _StorkShopHomePageState();
 }
 
 class _StorkShopHomePageState extends ConsumerState<StorkShopHomePage> {
+  List<CategoryModel> categories = CategoryData.categories;
+
+  @override
+  void initState() {
+    super.initState();
+    // print(CategoryData.categories[0].title);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,11 +50,7 @@ class _StorkShopHomePageState extends ConsumerState<StorkShopHomePage> {
                     SizedBox(height: AppSizes.md),
 
                     // Categories Title
-                    CategoriesHeaderWidget(
-                      title: 'Categories',
-                      actionText: 'All Products',
-                      onTap: () {},
-                    ),
+                    CategoriesHeaderWidget(title: 'Categories'),
                   ],
                 );
               }),
@@ -56,7 +60,7 @@ class _StorkShopHomePageState extends ConsumerState<StorkShopHomePage> {
             padding: EdgeInsets.only(left: AppSizes.md, right: AppSizes.md),
             sliver: SliverGrid(
               delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
-                final category = CategoryData.categories[index];
+                final category = categories[index];
                 return CategorieCard(
                   imagePath: category.imagePath,
                   title: category.title,
@@ -65,7 +69,7 @@ class _StorkShopHomePageState extends ConsumerState<StorkShopHomePage> {
                     context.pushNamed(StorkRoutesName.storkShopProductsPage);
                   },
                 );
-              }, childCount: 10),
+              }, childCount: categories.length),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 childAspectRatio: 0.75,
